@@ -15,8 +15,9 @@ const FormComponent = () => {
 
   const handleChange = (e) => {
     setValue(e.target.value);
-    SetShape(formValue);
     localStorage.setItem("lastShape", formValue);
+    SetShape(formValue);
+    
   };
   const handleSubmit = () => {
 
@@ -89,18 +90,16 @@ const FormComponent = () => {
           <SquareInput />
         ) : null}
         <br />
-        {savedShapeValue === "circle" ||
-        "ellipse" ||
-        "rectangle" ||
-        "square" ? (
-          <input
-            type="submit"
-            value="Create shape"
-            onClick={handleSubmit}
-            className="btn"
-          />
-        ) : (
+        {savedShapeValue === "" ||null
+        ? (
           "do pick a shape"
+        ) : (
+          <input
+          type="submit"
+          value="Create shape"
+          onClick={handleSubmit}
+          className="btn"
+        />
         )}
       </form>
     </Mysection>
