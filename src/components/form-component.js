@@ -13,7 +13,7 @@ const FormComponent = () => {
   let savedShapeValue = localStorage.getItem("lastShape");
   const [formValue, setValue] = React.useState(savedShapeValue);
   const [formValid, setFormValid] = React.useState(false);
-  const [showError, setShowError] = React.useState(false);
+  
   
   const handleChange = (e) => {
     setValue(e.target.value);
@@ -95,13 +95,13 @@ const FormComponent = () => {
           <SquareInput />
         ) : null}
         <br />
-        { showError? <p>select a shape first</p>:" "}
+       
           <input
           type="submit"
           value="Create shape"
           onClick={formValid
           ? 
-             handleSubmit : setShowError(true) }
+             handleSubmit : null }
           className="btn"
         />
         
