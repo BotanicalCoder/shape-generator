@@ -16,11 +16,11 @@ const FormComponent = () => {
   const handleChange = (e) => {
     setValue(e.target.value);
     localStorage.setItem("lastShape", formValue);
-    SetShape(formValue);
+   
     
   };
   const handleSubmit = () => {
-
+    SetShape(formValue);
     let x = document.getElementById("x").value;
     let y = document.getElementById("y").value;
     const dimensionArray = [];
@@ -90,7 +90,7 @@ const FormComponent = () => {
           <SquareInput />
         ) : null}
         <br />
-        {savedShapeValue === "" ||null
+        {formValue === "" ||null
         ? (
           "do pick a shape"
         ) : (
