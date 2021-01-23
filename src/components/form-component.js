@@ -89,15 +89,18 @@ const FormComponent = () => {
           <SquareInput />
         ) : null}
         <br />
-        {savedShapeValue !== null ? (
-         <input
-         type="submit"
-         value="Create shape"
-         onClick={handleSubmit}
-         className="btn"
-       /> 
+        {savedShapeValue === "circle" ||
+        "ellipse" ||
+        "rectangle" ||
+        "square" ? (
+          <input
+            type="submit"
+            value="Create shape"
+            onClick={handleSubmit}
+            className="btn"
+          />
         ) : (
-          " pick a shape"
+          "do pick a shape"
         )}
       </form>
     </Mysection>
