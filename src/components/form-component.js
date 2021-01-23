@@ -12,10 +12,15 @@ const FormComponent = () => {
   const { SetShape, SetDimension } = React.useContext(ShapeContext);
   let savedShapeValue = localStorage.getItem("lastShape");
   const [formValue, setValue] = React.useState(savedShapeValue);
-
+  const [formValid, setFormValid] = React.useState(false);
+  const [showError, setShowError] = React.useState(false);
+  
   const handleChange = (e) => {
     setValue(e.target.value);
     localStorage.setItem("lastShape", formValue);
+    if (e.target.value!=="") {
+      setFormValid(true);
+    }
    
     
   };
@@ -44,7 +49,7 @@ const FormComponent = () => {
         localStorage.getItem("savedDimensions")
       );
       const [saved_xvalue, saved_yvalue] = savedDimensionsArray;
-
+       
       SetDimension(saved_xvalue, saved_yvalue);
     }
   };
@@ -90,17 +95,16 @@ const FormComponent = () => {
           <SquareInput />
         ) : null}
         <br />
-        {formValue === "" ||null
-        ? (
-          "do pick a shape"
-        ) : (
+        { showError? <p>select a shape first</p>:" "}
           <input
           type="submit"
           value="Create shape"
-          onClick={handleSubmit}
+          onClick={formValid
+          ? 
+             handleSubmit : setShowError(true) }
           className="btn"
         />
-        )}
+        
       </form>
     </Mysection>
   );
