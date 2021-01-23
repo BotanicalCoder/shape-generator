@@ -17,8 +17,8 @@ const FormComponent = () => {
     setValue(e.target.value);
   };
   const handleSubmit = () => {
-    localStorage.setItem("lastShape", formValue);
     SetShape(formValue);
+    localStorage.setItem("lastShape", formValue);
 
     let x = document.getElementById("x").value;
     let y = document.getElementById("y").value;
