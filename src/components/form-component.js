@@ -89,15 +89,15 @@ const FormComponent = () => {
           <SquareInput />
         ) : null}
         <br />
-        {savedShapeValue === null ? (
-          " pick a shape"
+        {savedShapeValue !== null ? (
+         <input
+         type="submit"
+         value="Create shape"
+         onClick={handleSubmit}
+         className="btn"
+       /> 
         ) : (
-          <input
-            type="submit"
-            value="Create shape"
-            onClick={handleSubmit}
-            className="btn"
-          />
+          " pick a shape"
         )}
       </form>
     </Mysection>
