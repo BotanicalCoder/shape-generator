@@ -17,7 +17,7 @@ const FormComponent = () => {
   
   const handleChange = (e) => {
     setValue(e.target.value);
-    localStorage.setItem("lastShape", formValue);
+   
     if (e.target.value!=="") {
       setFormValid(true);
     }
@@ -25,6 +25,7 @@ const FormComponent = () => {
     
   };
   const handleSubmit = () => {
+    localStorage.setItem("lastShape", formValue);
     SetShape(formValue);
     let x = document.getElementById("x").value;
     let y = document.getElementById("y").value;
