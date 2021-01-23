@@ -15,10 +15,10 @@ const FormComponent = () => {
 
   const handleChange = (e) => {
     setValue(e.target.value);
-  };
-  const handleSubmit = () => {
     SetShape(formValue);
     localStorage.setItem("lastShape", formValue);
+  };
+  const handleSubmit = () => {
 
     let x = document.getElementById("x").value;
     let y = document.getElementById("y").value;
