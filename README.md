@@ -28,4 +28,4 @@
  * live demo at ( https://shape-generator-bc.netlify.app )
 
 ## Contact
-Created by [@botanicalcoder]
+* Created by [@botanicalcoder](twitter.com/botanicalcoder)
